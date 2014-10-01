@@ -2,11 +2,20 @@
 
 ## TOC
 
-**[CSS Tidbits](#css-tidbits)**
-**[Learn CSS Layout](#learn-css-layout)**
-**[Google Web Fundamentals](#google-web-fundamentals)**
+- **[CSS Tidbits](#css-tidbits)**
+- **[Learn CSS Layout](#learn-css-layout)**
+- **[Google Web Fundamentals](#google-web-fundamentals)**
 
 ### CSS Tidbits
+
+- **Flexbox**
+
+* Use if IE is not a large portion of your traffic.
+
+* Examples of how to adapt flexbox to various browser scenarios --
+http://www.planningforaliens.com/blog/2014/03/11/real-world-flexbox/
+
+* Examples of flexbox techniques -- http://philipwalton.github.io/solved-by-flexbox
 
 - **line-height**
 

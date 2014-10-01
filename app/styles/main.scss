@@ -58,6 +58,16 @@ body.open {
   margin: 0 auto;
 }
 
+.app-bar-flex {
+  display: flex;
+  width: 100%;
+  height: 60px;
+  // position: relative;
+  flex-direction: row;
+  margin: 0 auto;
+  background-color: #4285f4;
+}
+
 .app-bar.open,
 .app-bar.open ~ main {
   -webkit-transform: translate(250px, 0);
@@ -127,14 +137,6 @@ body.open {
 }
 
 .promote-layer {
-  /*
-  This may promote the layer to a composited
-  layer.
-
-  Replace with will-change when available
-
-  #perfmatters
-  */
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
 }
