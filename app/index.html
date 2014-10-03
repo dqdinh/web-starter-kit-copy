@@ -28,36 +28,39 @@
     <link rel="stylesheet" href="styles/main.css">
 
   </head>
-  <body>
+  <!-- <body> -->
+  <body class="HolyGrail">
     <!-- Add your site or app content here -->
-    <!-- <header class="app&#45;bar promote&#45;layer"> -->
-    <header class="app-bar-flex">
-      <!-- <div class=app&#45;bar&#45;container> -->
-      <div class="">
-        <button></button>
-        <h1>Web <strong>Starter Kit</strong></h1>
-        <section>
+    <header class="app-bar">
+      <div class="app-bar-container">
+        <button class="menu"><img src="images/hamburger.svg" alt="Menu"/></button>
+        <h1 class="logo">Web <strong>Starter Kit</strong></h1>
+        <section class="app-bar-actions">
+        <!-- Put App Bar Buttons Here -->
+        <button><i class="icon icon-star"></i></button>
         </section>
       </div>
     </header>
 
-    <nav>
+    <nav class="navdrawer-container">
       <h4>Navigation</h4>
       <ul>
         <li><a href="#">Hello</a></li>
         <li><a href="#">Get Started</a></li>
-        <li><a href="#">Style Guide</a></li>
-        <li><a href="/html/weather-responsive.html">Responsive Layout Demo</a></li>
+        <li><a href="styleguide.html">Style Guide</a></li>
+        <li><a href="/html/weather-responsive.html">Weather Demo</a></li>
       </ul>
     </nav>
 
     <main>
-    <h1>Meow!</h1>
-    <p>Welcome to WSK.</p>
+      <h1>Meow!</h1>
+      <p>Kittens rule.</p>
 
-    <h2>Get Started.</h2>
-    <p>read how to <a href="#">Get started</a> or check out the <a href="#">Style Guide</a>.</p>
+      <h2>Get Started.</h2>
+      <p>read how to <a href="#">Get started</a> or check out the <a href="#">Style Guide</a>.</p>
     </main>
+
+    <footer class="Footer"></footer>
 
     <!-- build:js scripts/main.min.js -->
     <script src="scripts/main.js"></script>
