@@ -28,6 +28,10 @@ var browserSync = require('browser-sync');
 var pagespeed = require('psi');
 var reload = browserSync.reload;
 
+// gulp-load-plugins does not work for gulp-scss-lint
+// so we'll declare it explictly.
+var scsslint = require('gulp-scss-lint');
+
 var AUTOPREFIXER_BROWSERS = [
   'ie >= 10',
   'ie_mob >= 10',
@@ -47,6 +51,12 @@ gulp.task('jshint', function () {
     .pipe($.jshint())
     .pipe($.jshint.reporter('jshint-stylish'))
     .pipe($.if(!browserSync.active, $.jshint.reporter('fail')));
+});
+
+// Lint SCSS
+gulp.task('scsslint', function() {
+  gulp.src(['app/styles/**/*.scss', 'app/styles/components/_vendor/'])
+    .pipe(scsslint({ 'config': 'lint.yml', 'bundleExec': true }));
 });
 
 // Optimize Images
@@ -98,6 +108,7 @@ gulp.task('styles', function () {
     // Concatenate And Minify Styles
     .pipe($.if('*.css', $.csso()))
     .pipe(gulp.dest('dist/styles'))
+    .pipe(reload({stream:true}))
     .pipe($.size({title: 'styles'}));
 });
 
@@ -140,10 +151,9 @@ gulp.task('html', function () {
 // Clean Output Directory
 gulp.task('clean', del.bind(null, ['.tmp', 'dist']));
 
-// Watch Files For Changes & Reload
-gulp.task('serve', ['styles'], function () {
+// Serve files
+gulp.task('browserSync', ['styles'], function () {
   browserSync({
-    notify: false,
     // Customize the BrowserSync console logging prefix
     logPrefix: 'WSK',
     // Run as an https by uncommenting 'https: true'
@@ -153,16 +163,23 @@ gulp.task('serve', ['styles'], function () {
     server: ['.tmp', 'app']
   });
 
-  gulp.watch(['app/**/*.html'], reload);
-  gulp.watch(['app/styles/**/*.{scss,css}'], ['styles', reload]);
+});
+
+// Watch Files For Changes & Reload
+gulp.task('serve', ['browserSync'], function () {
+  // gulp.watch(['app/**/*.html'], reload);
+  gulp.watch(['app/**/*.html'], ['html', reload]);
+  // If this was not Google's scss, I'd lint it on each relaod.
+  // gulp.watch(['app/styles/**/*.{scss,css}'], ['styles', 'scsslint', reload]);
+  // gulp.watch(['app/styles/**/*.{scss,css}'], ['styles', reload]);
+  gulp.watch(['app/styles/**/*.scss'], ['styles']);
   gulp.watch(['app/scripts/**/*.js'], ['jshint']);
-  gulp.watch(['app/images/**/*'], reload);
+  gulp.watch(['app/images/**/*'], ['images', reload]);
 });
 
 // Build and serve the output from the dist build
 gulp.task('serve:dist', ['default'], function () {
   browserSync({
-    notify: false,
     logPrefix: 'WSK',
     // Run as an https by uncommenting 'https: true'
     // Note: this uses an unsigned certificate which on first access
@@ -174,7 +191,7 @@ gulp.task('serve:dist', ['default'], function () {
 
 // Build Production Files, the Default Task
 gulp.task('default', ['clean'], function (cb) {
-  runSequence('styles', ['jshint', 'html', 'images', 'fonts', 'copy'], cb);
+  runSequence('styles', ['jshint', 'scsslint', 'html', 'images', 'fonts', 'copy'], cb);
 });
 
 // Run PageSpeed Insights

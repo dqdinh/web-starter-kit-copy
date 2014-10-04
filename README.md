@@ -4,7 +4,28 @@
 
 **Notes / Changes from original WSK:**
 
-- Follows SUITCSS naming convention.
+- Follows SUITCSS naming convention
+
+```css
+  /* Utility */
+  .u-utilityName {}
+
+  /* Component */
+  .ComponentName {}
+
+  /* Component modifier */
+  .ComponentName--modifierName {}
+
+  /* Component descendant */
+  .ComponentName-descendant {}
+
+  /* Component descendant modifier */
+  .ComponentName-descendant--modifierName {}
+
+  /* Component state (scoped to component) */
+  .ComponentName.is-stateOfComponent {}
+```
+
 - Uses Flexbox
 - Reorganize Styles Directory
   * Each UI component has a README.md (containing documentation, inclusive of HTML demos), a component-name.css, component-name.js and a component-name.html. (https://github.com/google/web-starter-kit/issues/446)

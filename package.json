@@ -5,6 +5,8 @@
     "del": "^0.1.2",
     "gulp": "^3.8.8",
     "gulp-autoprefixer": "^1.0.0",
+    "gulp-shell": "^0.2.9",
+    "gulp-scss-lint": "^0.1.4",
     "gulp-cache": "^0.2.2",
     "gulp-changed": "^1.0.0",
     "gulp-csso": "^0.2.9",
