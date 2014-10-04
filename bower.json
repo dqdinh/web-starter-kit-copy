@@ -1,0 +1,8 @@
+{
+  "name": "web-starter-kit-copy",
+  "version": "0.0.1",
+  "private": true,
+  "dependencies": {
+    "html-inspector": "^0.8.1"
+  }
+}

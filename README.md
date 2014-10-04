@@ -4,7 +4,7 @@
 
 **Notes / Changes from original WSK:**
 
-- Follows SUITCSS naming convention
+- [ ] Active SCSS follows SUIT CSS naming convention
 
 ```css
   /* Utility */
@@ -26,14 +26,14 @@
   .ComponentName.is-stateOfComponent {}
 ```
 
-- Uses Flexbox
-- Reorganize Styles Directory
+- [ ] Uses Flexbox
+- [ ] Reorganize Styles Directory
   * Each UI component has a README.md (containing documentation, inclusive of HTML demos), a component-name.css, component-name.js and a component-name.html. (https://github.com/google/web-starter-kit/issues/446)
   * Add Sytlesheet Gulp task to build the style sheet using KSS.
-- Add HTML Inspector
-- Add SCSS Lint
-- Add CS256 Demo
-- Add Weather Demo
+- [x] Add HTML Inspector
+- [x] Add SCSS Lint
+- [ ] Add CS256 Demo
+- [ ] Add Weather Demo
 
 [Web Starter Kit](http://developers.google.com/web/starter-kit) is an opinionated boilerplate for web development. Tools for building a great experience [across many devices](http://google.github.io/web-starter-kit/hello-world/) and [performance oriented](#web-performance). Helping you to stay productive following the best practices outlined in Google's [Web Fundamentals](http://developers.google.com/web/fundamentals). A solid starting point for both professionals and newcomers to the industry.
 

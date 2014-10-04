@@ -2,10 +2,11 @@
   "devDependencies": {
     "apache-server-configs": "^2.7.1",
     "browser-sync": "^1.5.2",
+    "html-inspector": "^0.8.1",
+    "gulp-shell": "^0.2.9",
     "del": "^0.1.2",
     "gulp": "^3.8.8",
     "gulp-autoprefixer": "^1.0.0",
-    "gulp-shell": "^0.2.9",
     "gulp-scss-lint": "^0.1.4",
     "gulp-cache": "^0.2.2",
     "gulp-changed": "^1.0.0",
